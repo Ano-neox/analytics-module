@@ -59,55 +59,141 @@ const AnalyticsMain = () => {
 
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} md={3}>
-            <Card>
-              <CardContent>
-                <Box display="flex" alignItems="center" gap={1}>
-                  <IconCurrencyRupee />
-                  <Typography variant="h6">Total Revenue</Typography>
+            <Card sx={{ 
+              backgroundColor: '#f0fff4',
+              border: 'none',
+              boxShadow: 'none',
+              borderRadius: 2,
+              p: 1
+            }}>
+              <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2, p: '16px !important' }}>
+                <Box sx={{ 
+                  backgroundColor: '#c6f6d5',
+                  borderRadius: '8px',
+                  p: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minWidth: '40px',
+                  height: '40px'
+                }}>
+                  <Box sx={{ fontSize: '20px', color: '#38a169' }}>💰</Box>
                 </Box>
-                <Typography variant="h4" color="success.main">₹12,45,000</Typography>
-                <Box display="flex" alignItems="center" gap={0.5} mt={1}>
-                  <IconTrendingUp size={16} color="green" />
-                  <Typography variant="body2" color="success.main">+12.5%</Typography>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <Card>
-              <CardContent>
-                <Box display="flex" alignItems="center" gap={1}>
-                  <IconUsers />
-                  <Typography variant="h6">Active Customers</Typography>
-                </Box>
-                <Typography variant="h4" color="primary">1,234</Typography>
-                <Box display="flex" alignItems="center" gap={0.5} mt={1}>
-                  <IconTrendingUp size={16} color="green" />
-                  <Typography variant="body2" color="success.main">+8.2%</Typography>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <Card>
-              <CardContent>
-                <Typography variant="h6">Conversion Rate</Typography>
-                <Typography variant="h4" color="info.main">24.5%</Typography>
-                <Box display="flex" alignItems="center" gap={0.5} mt={1}>
-                  <IconTrendingDown size={16} color="red" />
-                  <Typography variant="body2" color="error.main">-2.1%</Typography>
+                <Box>
+                  <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#1a202c', mb: 0.5 }}>
+                    ₹12,45,000
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#718096', fontSize: '14px' }}>
+                    Total Revenue
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#38a169', fontSize: '12px' }}>
+                    +12.5%
+                  </Typography>
                 </Box>
               </CardContent>
             </Card>
           </Grid>
           <Grid item xs={12} md={3}>
-            <Card>
-              <CardContent>
-                <Typography variant="h6">Avg Deal Size</Typography>
-                <Typography variant="h4" color="warning.main">₹45,600</Typography>
-                <Box display="flex" alignItems="center" gap={0.5} mt={1}>
-                  <IconTrendingUp size={16} color="green" />
-                  <Typography variant="body2" color="success.main">+5.7%</Typography>
+            <Card sx={{ 
+              backgroundColor: '#f8f9ff',
+              border: 'none',
+              boxShadow: 'none',
+              borderRadius: 2,
+              p: 1
+            }}>
+              <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2, p: '16px !important' }}>
+                <Box sx={{ 
+                  backgroundColor: '#e8eaff',
+                  borderRadius: '8px',
+                  p: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minWidth: '40px',
+                  height: '40px'
+                }}>
+                  <Box sx={{ fontSize: '20px', color: '#5a67d8' }}>👥</Box>
+                </Box>
+                <Box>
+                  <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#1a202c', mb: 0.5 }}>
+                    1,234
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#718096', fontSize: '14px' }}>
+                    Active Customers
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#38a169', fontSize: '12px' }}>
+                    +8.2%
+                  </Typography>
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Card sx={{ 
+              backgroundColor: '#fff5f5',
+              border: 'none',
+              boxShadow: 'none',
+              borderRadius: 2,
+              p: 1
+            }}>
+              <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2, p: '16px !important' }}>
+                <Box sx={{ 
+                  backgroundColor: '#fed7d7',
+                  borderRadius: '8px',
+                  p: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minWidth: '40px',
+                  height: '40px'
+                }}>
+                  <Box sx={{ fontSize: '20px', color: '#e53e3e' }}>📊</Box>
+                </Box>
+                <Box>
+                  <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#1a202c', mb: 0.5 }}>
+                    24.5%
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#718096', fontSize: '14px' }}>
+                    Conversion Rate
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#e53e3e', fontSize: '12px' }}>
+                    -2.1%
+                  </Typography>
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Card sx={{ 
+              backgroundColor: '#fffbf0',
+              border: 'none',
+              boxShadow: 'none',
+              borderRadius: 2,
+              p: 1
+            }}>
+              <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2, p: '16px !important' }}>
+                <Box sx={{ 
+                  backgroundColor: '#fed7aa',
+                  borderRadius: '8px',
+                  p: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minWidth: '40px',
+                  height: '40px'
+                }}>
+                  <Box sx={{ fontSize: '20px', color: '#d69e2e' }}>💵</Box>
+                </Box>
+                <Box>
+                  <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#1a202c', mb: 0.5 }}>
+                    ₹45,600
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#718096', fontSize: '14px' }}>
+                    Avg Deal Size
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#38a169', fontSize: '12px' }}>
+                    +5.7%
+                  </Typography>
                 </Box>
               </CardContent>
             </Card>
