@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Box, Typography, Card, CardContent, Grid, Select, MenuItem, FormControl, InputLabel
 } from '@mui/material';
-import { IconTrendingUp, IconTrendingDown, IconUsers, IconCurrencyRupee } from '@tabler/icons-react';
 import PageContainer from '../../../../modernize-dashboard/src/components/container/PageContainer';
 import Chart from 'react-apexcharts';
 
@@ -18,24 +17,98 @@ const AnalyticsMain = () => {
       data: [11, 32, 45, 32, 34, 52, 41]
     }],
     options: {
-      chart: { type: 'area', height: 350 },
-      dataLabels: { enabled: false },
-      stroke: { curve: 'smooth' },
-      xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+      chart: { 
+        type: 'area', 
+        height: 350,
+        toolbar: { show: false },
+        background: 'transparent'
       },
-      colors: ['#1976d2', '#2e7d32']
+      dataLabels: { enabled: false },
+      stroke: { 
+        curve: 'smooth',
+        width: 3
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 1,
+          opacityFrom: 0.7,
+          opacityTo: 0.1,
+          stops: [0, 90, 100]
+        }
+      },
+      xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        axisBorder: { show: false },
+        axisTicks: { show: false },
+        labels: {
+          style: {
+            colors: '#8e8da4',
+            fontSize: '12px'
+          }
+        }
+      },
+      yaxis: {
+        labels: {
+          style: {
+            colors: '#8e8da4',
+            fontSize: '12px'
+          }
+        }
+      },
+      grid: {
+        borderColor: '#e7e7e7',
+        strokeDashArray: 5
+      },
+      colors: ['#667eea', '#764ba2'],
+      legend: {
+        position: 'top',
+        horizontalAlign: 'right'
+      }
     }
   };
 
   const pieData = {
     series: [44, 55, 13, 43],
     options: {
-      chart: { type: 'pie' },
+      chart: { 
+        type: 'donut',
+        background: 'transparent'
+      },
       labels: ['CRM', 'Sales', 'Projects', 'Billing'],
-      colors: ['#1976d2', '#2e7d32', '#ed6c02', '#9c27b0']
+      colors: ['#667eea', '#f093fb', '#4facfe', '#43e97b'],
+      plotOptions: {
+        pie: {
+          donut: {
+            size: '70%',
+            labels: {
+              show: true,
+              total: {
+                show: true,
+                label: 'Total',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                color: '#373d3f'
+              }
+            }
+          }
+        }
+      },
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '12px',
+          fontWeight: 'bold'
+        }
+      },
+      legend: {
+        position: 'bottom',
+        fontSize: '12px'
+      }
     }
   };
+
+
 
   return (
     <PageContainer title="Analytics" description="Business Intelligence Dashboard">
@@ -202,9 +275,13 @@ const AnalyticsMain = () => {
 
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
-            <Card>
-              <CardContent>
-                <Typography variant="h6" mb={2}>Sales & Revenue Trends</Typography>
+            <Card sx={{ 
+              borderRadius: 3, 
+              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+              border: '1px solid #e2e8f0'
+            }}>
+              <CardContent sx={{ p: 3 }}>
+                <Typography variant="h6" mb={2} sx={{ fontWeight: 'bold', color: '#1a202c' }}>Sales & Revenue Trends</Typography>
                 <Chart
                   options={salesData.options}
                   series={salesData.series}
@@ -215,13 +292,17 @@ const AnalyticsMain = () => {
             </Card>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Card>
-              <CardContent>
-                <Typography variant="h6" mb={2}>Module Usage</Typography>
+            <Card sx={{ 
+              borderRadius: 3, 
+              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+              border: '1px solid #e2e8f0'
+            }}>
+              <CardContent sx={{ p: 3 }}>
+                <Typography variant="h6" mb={2} sx={{ fontWeight: 'bold', color: '#1a202c' }}>Module Usage</Typography>
                 <Chart
                   options={pieData.options}
                   series={pieData.series}
-                  type="pie"
+                  type="donut"
                   height={350}
                 />
               </CardContent>
@@ -231,9 +312,13 @@ const AnalyticsMain = () => {
 
         <Grid container spacing={3} mt={2}>
           <Grid item xs={12} md={6}>
-            <Card>
-              <CardContent>
-                <Typography variant="h6" mb={2}>Top Performing Products</Typography>
+            <Card sx={{ 
+              borderRadius: 3, 
+              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+              border: '1px solid #e2e8f0'
+            }}>
+              <CardContent sx={{ p: 3 }}>
+                <Typography variant="h6" mb={2} sx={{ fontWeight: 'bold', color: '#1a202c' }}>Top Performing Products</Typography>
                 <Box>
                   {['Web Development', 'Mobile App', 'Consulting', 'Support'].map((product, index) => (
                     <Box key={product} display="flex" justifyContent="space-between" alignItems="center" py={1}>
@@ -248,9 +333,13 @@ const AnalyticsMain = () => {
             </Card>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Card>
-              <CardContent>
-                <Typography variant="h6" mb={2}>Recent Activities</Typography>
+            <Card sx={{ 
+              borderRadius: 3, 
+              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+              border: '1px solid #e2e8f0'
+            }}>
+              <CardContent sx={{ p: 3 }}>
+                <Typography variant="h6" mb={2} sx={{ fontWeight: 'bold', color: '#1a202c' }}>Recent Activities</Typography>
                 <Box>
                   {[
                     'New customer registered',
